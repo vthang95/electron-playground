@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1>hello</h1>
+    <div id="todovalue"></div>
+    <script>
+      const { ipcRenderer } = require("electron")
+
+      ipcRenderer.on("todo:value", (event, data) => {
+        document.querySelector("#todovalue").innerHTML = data
+      })
+    </script>
+  </body>
+</html>
